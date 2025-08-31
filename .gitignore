@@ -1,3 +1,11 @@
+# Node
+node_modules/
+dist/
+.vscode/
 
-/node_modules
-/dist
+# Build artifacts
+*.log
+
+# Secrets
+.env
+.env.*
