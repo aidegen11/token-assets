@@ -1,5 +1,4 @@
 {
-  "name": "pump-fun-token-launcher",
   "version": "1.0.0",
   "description": "Programmatically launch pump.fun tokens with TypeScript support",
   "main": "dist/index.js",
@@ -11,7 +10,10 @@
     "build": "tsc",
     "prepublishOnly": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "example": "tsx example.ts"
+    "example": "tsx example.ts",
+    "auto:trending": "tsx example-trending.ts",
+    "portal:create": "tsx portal-create.ts",
+    "verify:mint": "tsx verify-mint.ts"
   },
   "keywords": [
     "pump.fun",
@@ -32,14 +34,27 @@
   },
   "homepage": "https://github.com/bilix-software/pump-fun-token-launcher#readme",
   "devDependencies": {
-    "@types/node": "^20.0.0",
-    "typescript": "^5.0.0",
-    "tsx": "^4.0.0"
+    "@types/bn.js": "^5.2.0",
+    "@types/bs58": "^4.0.4",
+    "@types/form-data": "^2.2.1",
+    "@types/node": "^20.19.11",
+    "@types/ws": "^8.18.1",
+    "form-data": "^4.0.4",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2"
   },
   "dependencies": {
-    "@solana/web3.js": "^1.95.0"
+    "@solana/kit": "^3.0.1",
+    "@solana/spl-token": "^0.4.13",
+    "@solana/web3.js": "^1.98.4",
+    "bn.js": "^5.2.2",
+    "bs58": "^6.0.0",
+    "dotenv": "^17.2.1",
+    "node-fetch": "^3.3.2",
+    "pump-fun-token-launcher": "^1.0.0",
+    "ws": "^8.18.3"
   },
   "engines": {
-    "node": ">=16.0.0"
+    "node": ">=18.17.0"
   }
 }

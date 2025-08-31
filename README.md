@@ -58,9 +58,9 @@ const config: TokenLaunchConfig = {
   name: "My Token",
   symbol: "MTK",
   description: "Token description",
-  initialBuy: 1.0,
-  slippage: 3,
-  priorityFee: 0.005
+  initialBuy: 0.001,
+  slippage: 5,
+  priorityFee: 0
 };
 
 // You can pass a Keypair instead of a string

@@ -1,21 +1,16 @@
-import { Keypair } from '@solana/web3.js';
+// src/index.ts
 
-// Main entry point for the pump-fun-token-launcher package
-export { launchToken } from './launch';
-export * from './constants';
-export * from './utils';
-
-// Type definitions for the package
+// Types used around your auto-config + portal flow
 export interface TokenLaunchConfig {
   name: string;
   symbol: string;
-  mintKeypair?: Keypair;
-  metadataUrl: string;
-  initialBuy?: number;
+  metadataUrl: string;   // ipfs://... or https gateway
+  initialBuy?: number;   // kept for compatibility (not used by Lightning create)
   slippage?: number;
   priorityFee?: number;
 }
 
+// (Kept for compatibility if other code imports it; not used by Lightning create)
 export interface LaunchResult {
   success: boolean;
   signature?: string;
@@ -23,6 +18,6 @@ export interface LaunchResult {
   error?: string;
 }
 
-// Re-export the main function with better typing
-export { launchToken as default } from './launch';
-export { validateTokenConfig } from './launch';
+// Public API surface for the Lightning-only setup
+export { buildConfigFromSTTrending } from "./auto-config-st";
+export { sendCreateTx } from "./portal-lightning";
